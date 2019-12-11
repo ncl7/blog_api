@@ -1,4 +1,4 @@
-#/src/views/UserView
+# /src/views/UserView
 
 from flask import request, json, Response, Blueprint
 # from ..models.UserModel import UserModel, UserSchema

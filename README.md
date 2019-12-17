@@ -1,2 +1,4 @@
 # blog_api
-HW: Web Application Part 1
+Nicole Lim
+
+Homework: Web Application

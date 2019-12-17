@@ -6,6 +6,10 @@ from .config import app_config
 from .models import db, bcrypt
 
 
+# import user_api blueprint
+from .views.UserView import user_api as user_blueprint
+
+
 def create_app(env_name):
     """
     Create app
@@ -21,6 +25,8 @@ def create_app(env_name):
 
     db.init_app(app)
 
+    app.register_blueprint(user_blueprint, url_prefix='/api/v1/users')
+
     @app.route('/', methods=['GET'])
     def index():
         """
@@ -29,3 +35,4 @@ def create_app(env_name):
         return 'Congratulations! Your first endpoint is workin'
 
     return app
+

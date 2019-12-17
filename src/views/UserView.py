@@ -71,3 +71,14 @@ def login():
     token = Auth.generate_token(ser_data.get('id'))
 
     return custom_response({'jwt_token': token}, 200)
+
+
+def custom_response(res, status_code):
+    """
+ Custom Response Function
+ """
+    return Response(
+        mimetype="application/json",
+        response=json.dumps(res),
+        status=status_code
+    )

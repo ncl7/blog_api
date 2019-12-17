@@ -46,3 +46,15 @@ class BlogpostModel(db.Model):
 
     def __repr__(self):
         return '<id {}>'.format(self.id)
+
+
+class BlogpostSchema(Schema):
+    """
+ Blogpost Schema
+ """
+    id = fields.Int(dump_only=True)
+    title = fields.Str(required=True)
+    contents = fields.Str(required=True)
+    owner_id = fields.Int(required=True)
+    created_at = fields.DateTime(dump_only=True)
+    modified_at = fields.DateTime(dump_only=True)
